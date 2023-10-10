@@ -3,9 +3,9 @@
 
 int main()
 {
-    int resultado = 0;
+    int resultado = 0; // variable donde se guardará temporalmente el resultado de la multiplicacion
     
-    int array_1[10][10] = {
+    int array_1[10][10] = { //se inicializa la primera una matriz de 10X10 de manera manual
         {9,7,8,1,2,4,5,6,3,1},
         {2,9,8,7,3,6,5,8,4,1},
         {3,6,4,7,8,9,5,1,2,3},
@@ -18,7 +18,7 @@ int main()
         {2,8,3,6,8,4,1,2,7,6}
     };
     
-    int array_2[10][10] = {
+    int array_2[10][10] = { //se inicializa la segunda una matriz de 10X10 de manera manual
         {2,8,6,5,3,8,3,8,3,4},
         {2,5,1,8,2,8,2,8,5,1},
         {4,5,9,4,8,2,7,9,4,5},
@@ -31,15 +31,15 @@ int main()
         {6,7,8,9,5,4,1,2,7,8}
     };
 
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
-            for (int h = 0; h < 10; h++) {
-                resultado += array_1[j][h] * array_2[h][i];
+    for (int i = 0; i < 10; i++) { // ciclo que recorrera los elementos en horizontal de cada matriz
+        for (int j = 0; j < 10; j++) { // ciclo que recorrera los elementos en vertical de cada matriz 
+            for (int h = 0; h < 10; h++) { // ciclo necesario para sumar los resultados de las multiplicciones;el tercer ciclo se usa para poder sumar las multiplicasiones que originan un solo elemento 
+                resultado += array_1[j][h] * array_2[h][i]; // multiplicacion que origina un elemento
             }
-            printf("%d ", resultado);
-            resultado = 0;
+            printf("%d ", resultado); // imprimir el resultado de la multiplicacion
+            resultado = 0; // reseteo de la variable resultado
         }
-        printf("\n");
+        printf("\n"); // salto de linea para dar formato
     }
 
     return 0;
